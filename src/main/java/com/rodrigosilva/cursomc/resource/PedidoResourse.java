@@ -14,7 +14,7 @@ import com.rodrigosilva.cursomc.domain.Categoria;
 import com.rodrigosilva.cursomc.services.CategoriaService;
 
 @RestController
-@RequestMapping(value = "/Pedido")
+@RequestMapping(value = "/pedidos")
 public class PedidoResourse {
 	
 	@Autowired
