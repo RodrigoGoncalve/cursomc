@@ -1,9 +1,9 @@
 package com.rodrigosilva.cursomc.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.rodrigosilva.cursomc.domain.Categoria;
@@ -41,4 +41,7 @@ public class CategoriaService {
 			throw new DateIntegrityException("não é possível excluir uma categoria que possui produto");
 		}
   }
+	public List <Categoria> findAll(){
+		return repo.findAll();
+	}
 }	
