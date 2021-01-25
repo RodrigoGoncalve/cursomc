@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.rodrigosilva.cursomc.services.exception.DateIntegrityException;
+
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	
@@ -18,5 +20,10 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);		
 				
 	}
-
+	@ExceptionHandler(DateIntegrityException.class)
+	public ResponseEntity<StandardError> dataIntagrity(DateIntegrityException e, HttpServletRequest request){
+		
+		StandardError err = new StandardError(HttpStatus.BAD_REQUEST.value(), e.getMessage(), System.currentTimeMillis());
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);	
+	}
 }
