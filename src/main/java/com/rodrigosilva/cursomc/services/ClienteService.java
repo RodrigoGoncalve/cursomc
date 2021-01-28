@@ -29,7 +29,7 @@ public class ClienteService {
 	public Cliente update(Cliente obj) {
 		Cliente newObj = find(obj.getId());
 		updateData(newObj, obj);
-		return repo.save(obj);
+		return repo.save(newObj);
 	}
 	public void delete(Integer id) {
 		find(id);
@@ -51,7 +51,7 @@ public class ClienteService {
 		return new Cliente(objDto.getId(), objDto.getNome(), objDto.getEmail(), null, null);
 	}
 	private void updateData(Cliente newObj, Cliente obj) {
-		newObj.setNome(obj.getNome());
+	    newObj.setNome(obj.getNome());
 		newObj.setEmail(obj.getEmail());
 	}
 }
