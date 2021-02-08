@@ -17,7 +17,7 @@ public class ProdutoDTO implements Serializable{
 	public ProdutoDTO(Produto obj) {
 		id = obj.getId();
 		nome = obj.getNome();
-		price = obj.getPrice();
+		price = obj.getPreco();
 	}
 
 
@@ -37,7 +37,7 @@ public class ProdutoDTO implements Serializable{
 		this.nome = nome;
 	}
 
-	public Double getPrice() {
+	public Double getPreco() {
 		return price;
 	}
 
