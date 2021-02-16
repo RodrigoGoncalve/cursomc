@@ -28,7 +28,6 @@ public class Cliente implements Serializable {
 	private Integer id;
 	private String nome;
 	
-	//@Column(unique=true)
 	@Column (length = 128, unique = true)
 	private String email;
 	private String cpfOuCnpj;
